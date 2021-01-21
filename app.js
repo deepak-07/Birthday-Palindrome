@@ -19,16 +19,19 @@ function generateDate(date) {
 function checkPalindrome(date) {
     var flag = 0;
     var dateCheck = parseInt(date);
-    console.log("date- " + dateCheck);
+    var d= dateCheck;
+    console.log("date - " + date);
     var reverse = "";
-    while (dateCheck != 0) {
+    while (dateCheck > 0) {
         var rem = dateCheck % 10
         reverse = reverse * 10 + rem;
         dateCheck = parseInt(dateCheck / 10);
     }
     console.log(reverse);
-    if (reverse === date) {
+    if (reverse === d) {
         flag = 1;
+        output.innerHTML =
+            "Congratulations, Your birthdate is a palindrome birthdate!!";
     } else {
         flag = 0;
     }
