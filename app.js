@@ -1,23 +1,65 @@
 alert("lo mai aa gya");
-var date = document.querySelector("#birthday").value;
+var dob = document.querySelector("#birthday");
 var btn = document.querySelector(".check-btn");
 var output = document.querySelector(".outputArea");
 
+//Splitting entered date, and generating the date in different formats and putting them into an array.
+function generateDate(date) {
+    var datearr = date.split("-");
+    var ymd = datearr[0] + datearr[1] + datearr[2];
+    var dmy = datearr[2] + datearr[1] + datearr[0];
+    var mdy = datearr[1] + datearr[2] + datearr[0];
+    datearr[0] = ymd;
+    datearr[1] = dmy;
+    datearr[2] = mdy;
+    return datearr;
+}
 
-var rem = 0;
-var reverse = 0;
-var number = date;
-console.log(date);
+//Checking if the date is palindrome
+function checkPalindrome(date) {
+    var flag = 0;
+    var dateCheck = parseInt(date);
+    console.log("date- " + dateCheck);
+    var reverse = "";
+    while (dateCheck != 0) {
+        var rem = dateCheck % 10
+        reverse = reverse * 10 + rem;
+        dateCheck = parseInt(dateCheck / 10);
+    }
+    console.log(reverse);
+    if (reverse === date) {
+        flag = 1;
+    } else {
+        flag = 0;
+    }
+    return flag;
+}
 
 function clickHandler() {
-    while (number != 0) {
+    var date = dob.value;
+    if (dob.value === "") {
+        output.innerHTML = "Please enter a date";
+    } else {
+        var flag = 0;
+        var dateformats = generateDate(date);
 
-        rem = number % 10;
-        reverse = rem * 10 + rem;
-        number = number / 10;
+        //loop to check if any one format of date is palindrome using the checkPalindrome function
+        for (var i = 0; i < dateformats.length; i++) {
+            flag = checkPalindrome(dateformats[i]);
+            console.log(flag);
+            if (flag === 1) {
+                break;
+            }
+        }
+
+        //Displaying appropiate result depending on the flag value. 1 is date is palindrome, 0 is it isn't
+        if (flag === 1) {
+            output.innerHTML =
+                "Congratulations, Your birthdate is a palindrome birthdate!!";
+        } else if (flag === 0) {
+            output.innerHTML =
+                "Oops :( your birthdate is not a palidrome birthdate.";
+        }
     }
-    console.log(number);
-    output.innerHTML = date;
 }
-console.log(number);
-btn.addEventListener("click", clickHandler);
+btn.addEventListener('click', clickHandler);
