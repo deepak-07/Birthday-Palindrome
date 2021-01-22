@@ -1,0 +1,55 @@
+body {
+    background-color: rgba(221, 214, 254);
+}
+
+
+/* @header */
+
+.header {
+    padding: 2px 2px;
+    margin-bottom: 50px;
+}
+
+.head {
+    display: inline;
+}
+
+.head li {
+    float: right;
+    display: inline;
+    padding: 10px 20px;
+}
+
+.head li a {
+    font-weight: bolder;
+    color: #1E3A8A;
+    text-decoration: none;
+}
+
+
+/* @contain */
+
+.container {
+    display: block;
+    text-align: center;
+    border: 10px solid cadetblue;
+    background-color: cadetblue;
+    margin: auto;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+
+/* @input */
+
+.inputArea {
+    display: block;
+}
+
+
+/* @output */
+
+.outputArea {
+    display: block;
+    padding: 8px 2px;
+}

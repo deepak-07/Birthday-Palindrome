@@ -1,4 +1,4 @@
-alert("lo mai aa gya");
+
 var dob = document.querySelector("#birthday");
 var btn = document.querySelector(".check-btn");
 var output = document.querySelector(".outputArea");
