@@ -37,7 +37,7 @@ function checkPalindrome(date) {
     }
     return flag;
 }
-
+ 
 function clickHandler() {
     var date = dob.value;
     if (dob.value === "") {
