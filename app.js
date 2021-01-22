@@ -1,4 +1,3 @@
-
 var dob = document.querySelector("#birthday");
 var btn = document.querySelector(".check-btn");
 var output = document.querySelector(".outputArea");
@@ -19,7 +18,7 @@ function generateDate(date) {
 function checkPalindrome(date) {
     var flag = 0;
     var dateCheck = parseInt(date);
-    var d= dateCheck;
+    var d = dateCheck;
     console.log("date - " + date);
     var reverse = "";
     while (dateCheck > 0) {
@@ -31,13 +30,13 @@ function checkPalindrome(date) {
     if (reverse === d) {
         flag = 1;
         output.innerHTML =
-            "Congratulations, Your birthdate is a palindrome birthdate!!";
+            "Congratulations 🥳, Your birthdate is a Palindrome Birthdate!!";
     } else {
         flag = 0;
     }
     return flag;
 }
- 
+
 function clickHandler() {
     var date = dob.value;
     if (dob.value === "") {
@@ -58,10 +57,10 @@ function clickHandler() {
         //Displaying appropiate result depending on the flag value. 1 is date is palindrome, 0 is it isn't
         if (flag === 1) {
             output.innerHTML =
-                "Congratulations, Your birthdate is a palindrome birthdate!!";
+                "Congratulations 🥳, Your birthdate is a Palindrome Birthdate!!";
         } else if (flag === 0) {
             output.innerHTML =
-                "Oops :( your birthdate is not a palidrome birthdate.";
+                "Oops 😔 your birthdate is not a Palidrome Birthdate!!";
         }
     }
 }
