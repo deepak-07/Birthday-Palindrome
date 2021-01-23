@@ -20,6 +20,7 @@ function generateDate(date) {
     datearr[5] = mmddyy;
     return datearr;
 }
+var format = ["YYYY-MM-DD", "DD-MM-YYYY", "MM-DD-YYYY", "YY-MM-DD", "DD-MM-YY", "MM-DD-YY"];
 
 //Checking if the date is palindrome
 function checkPalindrome(date) {
@@ -66,7 +67,7 @@ function clickHandler() {
             output.innerHTML = "<img src = '/congrats.gif' style='display' >";
 
             setTimeout(() => output.innerHTML =
-                "Congratulations 🥳, Your birthdate is a Palindrome Birthdate!!", 1000);
+                "Congratulations 🥳, Your birthdate is a Palindrome Birthdate!! according to "+ format[i] +" format", 1000);
 
 
         } else if (flag === 0) {
