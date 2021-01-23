@@ -56,11 +56,15 @@ function clickHandler() {
 
         //Displaying appropiate result depending on the flag value. 1 is date is palindrome, 0 is it isn't
         if (flag === 1) {
-            output.innerHTML =
-                "Congratulations 🥳, Your birthdate is a Palindrome Birthdate!!";
+            output.innerHTML = "<img src = '/congrats.gif' style='display' >";
+
+            setTimeout(() => output.innerHTML =
+                "Congratulations 🥳, Your birthdate is a Palindrome Birthdate!!", 1000);
+
+
         } else if (flag === 0) {
             output.innerHTML =
-                "Oops 😔 your birthdate is not a Palidrome Birthdate!!";
+                "Oops 😔, Your birthdate is not a Palidrome Birthdate!!";
         }
     }
 }
