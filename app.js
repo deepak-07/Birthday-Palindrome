@@ -8,9 +8,16 @@ function generateDate(date) {
     var ymd = datearr[0] + datearr[1] + datearr[2];
     var dmy = datearr[2] + datearr[1] + datearr[0];
     var mdy = datearr[1] + datearr[2] + datearr[0];
+    //year in 2 digits
+    var yymmdd = datearr[0].slice(-2) + datearr[1] + datearr[2];
+    var ddmmyy = datearr[2] + datearr[1] + datearr[0].slice(-2);
+    var mmddyy = datearr[1] + datearr[2] + datearr[0].slice(-2);
     datearr[0] = ymd;
     datearr[1] = dmy;
     datearr[2] = mdy;
+    datearr[3] = yymmdd;
+    datearr[4] = ddmmyy;
+    datearr[5] = mmddyy;
     return datearr;
 }
 
