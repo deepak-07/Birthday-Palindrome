@@ -32,15 +32,20 @@ function checkPalindrome(date) {
     var flag = 0;
     var dateCheck = parseInt(date);
     var d = dateCheck;
+    // var length = d.length;
     console.log("date - " + date);
     var reverse = "";
+
     while (dateCheck > 0) {
         var rem = dateCheck % 10
         reverse = reverse * 10 + rem;
         dateCheck = parseInt(dateCheck / 10);
     }
-    console.log(reverse);
-    if (reverse === d) {
+    var fullNumber = reverse + "0000";
+    var realReverse = fullNumber.slice(0, date.length);
+    var r = realReverse.toString().padStart(date.length, '0');
+
+    if (r == d) {
         flag = 1;
         output.innerHTML =
             "Congratulations 🥳, Your birthdate is a Palindrome Birthdate!!";
