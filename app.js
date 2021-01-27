@@ -8,8 +8,6 @@ function generateDate(date) {
     var year = datearr[0];
     var month = ("00" + datearr[1]).slice(-2);
     var date = ("00" + datearr[2]).slice(-2);
-    console.log("Date = " + date);
-    console.log("Month = " + month);
     var ymd = year + month + date;
     var dmy = date + month + year;
     var mdy = month + date + year;
@@ -32,23 +30,21 @@ function checkPalindrome(date) {
     var flag = 0;
     var dateCheck = parseInt(date);
     var d = dateCheck;
-    // var length = d.length;
+    var length = 0;
     console.log("date - " + date);
     var reverse = "";
 
-    while (dateCheck > 0) {
-        var rem = dateCheck % 10
+    while (dateCheck != 0) {
+        var rem = dateCheck % 10;
         reverse = reverse * 10 + rem;
         dateCheck = parseInt(dateCheck / 10);
+        length++;
     }
+    
     var fullNumber = reverse + "0000";
-    var realReverse = fullNumber.slice(0, date.length);
-    var r = realReverse.toString().padStart(date.length, '0');
-
-    if (r == d) {
+    var realReverse = fullNumber.slice(0, length);
+    if (realReverse == d) {
         flag = 1;
-        output.innerHTML =
-            "Congratulations 🥳, Your birthdate is a Palindrome Birthdate!!";
     } else {
         flag = 0;
     }
