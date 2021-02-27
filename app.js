@@ -28,22 +28,14 @@ var format = ["YYYY-MM-DD", "DD-MM-YYYY", "MM-DD-YYYY", "YY-MM-DD", "DD-MM-YY", 
 //Checking if the date is palindrome
 function checkPalindrome(date) {
     var flag = 0;
-    var dateCheck = parseInt(date);
+    var dateCheck = date;
     var d = dateCheck;
     var length = 0;
     console.log("date - " + date);
     var reverse = "";
 
-    while (dateCheck != 0) {
-        var rem = dateCheck % 10;
-        reverse = reverse * 10 + rem;
-        dateCheck = parseInt(dateCheck / 10);
-        length++;
-    }
-
-    var fullNumber = reverse + "0000";
-    var realReverse = fullNumber.slice(0, length);
-    if (realReverse == d) {
+    reverse = date.split("").reverse().join("");
+    if (reverse === date) {
         flag = 1;
     } else {
         flag = 0;
